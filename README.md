@@ -11,22 +11,17 @@ This is a simple command-line interface (CLI) application for spaced repetition 
     cd spaced_repetition
     ```
 
-2.  **Create a virtual environment (recommended):**
+2.  **Create a virtual environment with conda (recommended):**
 
     ```bash
-    python3 -m venv.venv
-    source.venv/bin/activate  # On Windows:.venv\Scripts\activate
+    conda create --name spaced-repetition python=3.10
+    conda activate spaced-repetition
     ```
 
 3.  **Install dependencies:**
 
     ```bash
     pip install -r requirements.txt
-    ```
-
-    (Or, if you used `setup.py` and built a distribution:)
-    ```bash
-    pip install dist/spaced_repetition-0.1.0-py3-none-any.whl # Replace with actual filename
     ```
 
 4.  **Set up your LLM API key:**
@@ -38,9 +33,9 @@ This is a simple command-line interface (CLI) application for spaced repetition 
 1.  **Run the application:**
 
     ```bash
-    spaced_repetition --data_dir my_data_folder
+    spaced_repetition --data my_data_folder
     ```
-    (Replace `my_data_folder` with your data directory path. If you don't specify `--data_dir`, it defaults to `data`.)
+    (Replace `my_data_folder` with your data directory path. If you don't specify `--data`, it defaults to `./data`.)
 
 2.  **Answer questions:** The application will present questions. Type your answer and press Enter.
 
@@ -57,3 +52,5 @@ The data directory should have the following structure:
     ├───── item1.txt  # Example learning item
     ├───── item2.txt  # Another learning item
     └─────...
+
+Look at the test_data directories for exact metadata format. If metadata isn't present, it will be automatically generated.
